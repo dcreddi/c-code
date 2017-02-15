@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 
-void rotateAntiClock(int m, int n, arr[][n])
+void rotateAntiClock(int m, int n, int arr[m][n])
 {
 
     for (int i = 0; i < n/2; i++)
@@ -57,8 +57,8 @@ int main()
     // print(arr, 4, 4);
     print( (int *)arr, 4, 4);
     print( (int *)hello, 2, 3);
-    rotateAntiClock((int*)arr,4,4);
-    print( (int *)arr, 4, 4);
+    rotateAntiClock(m,n,arr);
+    print( (int *)arr, m, n);
 
 }
 
