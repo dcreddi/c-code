@@ -3,7 +3,8 @@
 #include<stdbool.h>
 
 //node structure
-struct node{
+struct node
+{
     int val;
     struct node* next;
 };
