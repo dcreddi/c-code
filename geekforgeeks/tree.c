@@ -22,15 +22,14 @@ struct node* newNode(int data)
 
 //malloc, insert new node left
 void leftNode(struct node* temp,int data)
-{   
-    if (temp == NULL)
+{    if (temp == NULL)
         return;
     
-    while(temp != NULL){
+    while(temp->left != NULL){
         temp = temp->left;
     }
-    temp = newNode(data);
-    printf("inserted data %d at left\n",data);
+    temp->left = newNode(data);
+   // printf("inserted data %d at left\n",data);
 }
 
 //malloc, insert new node right
@@ -40,11 +39,22 @@ void rightNode(struct node* temp,int data)
     if(temp == NULL)
             return;
     
-    while(temp != NULL){
+    while(temp->right != NULL){
        temp = temp->right;
     }
-    temp  = newNode(data);
-    printf("inserted data %d at right\n",data);
+    temp->right  = newNode(data);
+ //   printf("inserted data %d at right\n",data);
+}
+
+//print tree
+
+void printTree(struct node *temp)
+{
+    if(temp == NULL)
+        return;
+    printTree(temp -> right);
+    printf("%d\n",temp -> data);
+    printTree(temp -> left);
 }
 
 int main()
@@ -53,6 +63,8 @@ int main()
     leftNode(root,2);
     rightNode(root,3);
     leftNode(root,4);
-    rightNode(root,5);
+    leftNode(root,5);
+    rightNode(root,6);
+   printTree(root);
 }
 
