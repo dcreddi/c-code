@@ -52,9 +52,9 @@ void printTree(struct node *temp)
 {
     if(temp == NULL)
         return;
-    printTree(temp -> right);
-    printf("%d\n",temp -> data);
     printTree(temp -> left);
+    printf("%d\n",temp -> data);
+    printTree(temp -> right);
 }
 
 int main()
