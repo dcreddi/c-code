@@ -45,6 +45,7 @@ int pop(struct node *stack)
 {
     if(isEmpty(stack))
         return INT_MIN;
+    printf("top %d\n",stack->top);
     return stack->arr[stack->top--];
 }
 
@@ -69,6 +70,7 @@ int main()
 
     int popped = pop(stack);
     printf("\npopped: %d\n",popped);
+    printf("top %d\n",stack->top);
     
     for (int i = 0; i < 10; i++)
     {
@@ -80,6 +82,19 @@ int main()
     {
         printf("%d,",stack->arr[i]);
     }
-
+  popped = pop(stack);
+    printf("\npopped: %d\n",popped);
+    printf("top %d\n",stack->top);
+    
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d,",stack->arr[i]);
+    }
+    printf("\n");
+ 
+    for (int i = 0; i <= (stack->top); i++)
+    {
+        printf("%d,",stack->arr[i]);
+    }
 }
 
